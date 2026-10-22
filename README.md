@@ -55,7 +55,7 @@ author: 你的名字
 
 ## 本地运行
 
-需要 Node.js 22.23.4 或更新版本。
+需要 Node.js 22.23.4 或更新版本；CI 和 Cloudflare Pages 按 `.node-version` 使用 Node.js 24.18.0。
 
 ```bash
 npm ci
