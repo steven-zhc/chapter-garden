@@ -1,0 +1,18 @@
+---
+import { render } from 'astro:content'
+import Reader from '../../../components/Reader.astro'
+import { chapterSlug, getBooks } from '../../../lib/library'
+
+export async function getStaticPaths() {
+  const books = await getBooks()
+  return books.flatMap((book) => book.chapters.map((chapter) => ({
+    params: { book: book.slug, chapter: chapterSlug(chapter) },
+    props: { book, chapter },
+  })))
+}
+
+const { book, chapter } = Astro.props
+const { Content } = await render(chapter)
+---
+
+<Reader book={book} chapter={chapter}><Content /></Reader>

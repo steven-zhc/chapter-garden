@@ -1,0 +1,58 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+
+:root{font-family:'DM Sans',system-ui,sans-serif;color:#262620;background:#f9f7f1;font-synthesis:none}
+*{box-sizing:border-box}
+body{margin:0}
+a{color:inherit;text-decoration:none}
+.site-header{height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 clamp(24px,5vw,80px);border-bottom:1px solid #e8e5db;background:#fcfbf7}
+.brand{font-family:'Noto Serif SC',serif;font-size:23px;font-weight:700;letter-spacing:.13em}
+.brand span{font-family:'DM Sans',sans-serif;font-size:10px;font-weight:600;letter-spacing:.24em;color:#9b9a8f;margin-left:13px;vertical-align:middle}
+.header-link{font-size:13px;color:#66665d;transition:color .2s}
+.header-link:hover{color:#b76543}
+.eyebrow{font-family:'DM Sans',sans-serif;font-size:11px;font-weight:700;letter-spacing:.2em;color:#ae735a;text-transform:uppercase}
+.home-main{max-width:1200px;margin:auto;padding:0 40px}
+.hero{padding:110px 0 112px;border-bottom:1px solid #dfdbcf}
+.hero h1{font-family:'Noto Serif SC',serif;font-size:clamp(48px,7vw,88px);line-height:1.35;letter-spacing:.02em;font-weight:600;margin:24px 0 22px}
+.hero h1 em{font-style:normal;color:#ad7157}
+.hero>p:last-child{font-size:16px;line-height:1.9;color:#77776c;max-width:540px}
+.library{padding:58px 0 120px}
+.section-heading{display:flex;align-items:baseline;justify-content:space-between;border-bottom:1px solid #dfdbcf;padding-bottom:18px;margin-bottom:36px}
+.section-heading h2{font-family:'Noto Serif SC',serif;font-size:28px;margin:0}
+.section-heading span{font-size:13px;color:#8a897e}
+.book-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(275px,1fr));gap:32px}
+.book-card{display:block;transition:transform .25s}
+.book-card:hover{transform:translateY(-5px)}
+.book-cover{height:330px;padding:27px;background:linear-gradient(145deg,#687e77,#354e4c);color:#eee9d9;display:flex;flex-direction:column;justify-content:space-between;box-shadow:8px 10px 20px #304b4830;border-left:7px solid #344e4d}
+.book-cover-number{font-size:13px;letter-spacing:.14em;opacity:.7}
+.book-cover strong{font-family:'Noto Serif SC',serif;font-size:42px;letter-spacing:.08em;writing-mode:vertical-rl;align-self:center;font-weight:500}
+.book-cover span:last-child{font-size:11px;letter-spacing:.2em;opacity:.65}
+.book-card-text{padding-top:24px}
+.book-card-text h3{font-family:'Noto Serif SC',serif;font-size:22px;margin:0 0 10px}
+.book-card-text p{font-size:14px;line-height:1.8;color:#77776c;min-height:50px;margin:0 0 18px}
+.book-card-text span{display:block;font-size:12px;color:#99988d}
+.book-card-text b{float:right;color:#ac7157;font-weight:500}
+.home-footer{border-top:1px solid #e4e0d6;padding:30px;text-align:center;font-size:12px;color:#a5a397}
+.reader-shell{display:grid;grid-template-columns:minmax(270px,350px) minmax(0,1fr);min-height:calc(100vh - 72px)}
+.sidebar{border-right:1px solid #e3dfd4;background:#f5f2e9}
+.sidebar-inner{position:sticky;top:0;padding:64px 42px;max-height:100vh;overflow-y:auto}
+.sidebar h1{font-family:'Noto Serif SC',serif;font-size:30px;line-height:1.4;margin:18px 0}
+.book-description{font-size:13px;line-height:1.9;color:#868378}
+.sidebar-rule{height:1px;background:#ddd8ca;margin:34px 0}
+.sidebar-label{font-size:13px;font-weight:700;letter-spacing:.08em;display:flex;justify-content:space-between;margin-bottom:18px}
+.sidebar-label span{font-weight:400;color:#9b998e}
+.chapter-list{list-style:none;padding:0;margin:0}
+.chapter-list li a{display:flex;gap:15px;padding:14px 12px;margin:0 -12px;font-size:13px;line-height:1.5;color:#77766e;border-radius:4px}
+.chapter-list li a:hover{background:#ebe5d9;color:#483b32}
+.chapter-list li a[aria-current="page"]{background:#e9e0d1;color:#9b573c;font-weight:700}
+.chapter-number{color:#aaa699;font-size:11px;padding-top:2px}
+.reading-area{max-width:850px;width:100%;padding:85px clamp(30px,8vw,115px) 36px;margin:0 auto}
+.reading-area article>h2{font-family:'Noto Serif SC',serif;font-size:clamp(32px,4vw,48px);font-weight:600;margin:21px 0 60px;line-height:1.45}
+.chapter-content{font-family:'Noto Serif SC',serif;font-size:18px;line-height:2.5;color:#36362e;letter-spacing:.03em;min-height:250px}
+.chapter-content p{margin:0 0 1.45em}
+.chapter-content blockquote{border-left:3px solid #ba8063;padding:6px 0 6px 24px;margin:34px 0;color:#7b5f50}
+.chapter-content blockquote p{margin:0}
+.chapter-navigation{border-top:1px solid #e2ded4;margin-top:80px;padding:30px 0;display:flex;justify-content:space-between;gap:24px;font-family:'Noto Serif SC',serif;font-size:14px;color:#9d5e45}
+.chapter-navigation a:hover{text-decoration:underline}
+.chapter-end{color:#a4a196}
+.reading-area footer{border-top:1px solid #e2ded4;padding-top:24px;font-size:12px;color:#aaa79b}
+@media(max-width:760px){.site-header{height:62px;padding:0 20px}.brand{font-size:20px}.brand span{font-size:8px;margin-left:6px}.home-main{padding:0 24px}.hero{padding:75px 0 80px}.hero h1{font-size:48px}.library{padding:45px 0 80px}.reader-shell{display:block}.sidebar{border-right:0;border-bottom:1px solid #e3dfd4}.sidebar-inner{position:static;padding:32px 24px;max-height:none}.sidebar h1{font-size:25px;margin:10px 0}.book-description{margin-bottom:0}.sidebar-rule{margin:20px 0}.chapter-list{display:flex;overflow-x:auto;gap:8px}.chapter-list li{flex:none}.chapter-list li a{margin:0;padding:10px 12px}.reading-area{padding:55px 26px 28px}.reading-area article>h2{margin-bottom:40px}.chapter-content{font-size:16px;line-height:2.2}.chapter-navigation{margin-top:55px}}
