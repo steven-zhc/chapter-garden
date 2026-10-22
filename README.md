@@ -78,7 +78,7 @@ npm run check
 npm run build
 ```
 
-网站使用 Astro 生成静态文件。计划部署到 Cloudflare Pages，构建命令为 `npm run build`，输出目录为 `dist`，主地址为 `chapter.hczhang.com`；`cg.hczhang.com` 和 `chapter-garden.hczhang.com` 计划跳转到主地址。
+网站使用 Astro 生成静态文件。部署到 Cloudflare Pages，构建命令为 `npm run build`，输出目录为 `dist`，主地址为 `cg.hczhang.com`；`chapter.hczhang.com` 和 `chapter-garden.hczhang.com` 可在之后跳转到主地址。
 
 ---
 
@@ -144,4 +144,4 @@ npm run check
 npm run build
 ```
 
-Astro writes the static site to `dist`. The planned Cloudflare Pages URL is `chapter.hczhang.com`, with `cg.hczhang.com` and `chapter-garden.hczhang.com` redirecting to it.
+Astro writes the static site to `dist`. The Cloudflare Pages address is `cg.hczhang.com`; `chapter.hczhang.com` and `chapter-garden.hczhang.com` can redirect to it later.
