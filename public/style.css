@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Fraunces:wght@400;500;600;700&family=Noto+Serif+SC:wght@400;500;600;700&family=Source+Serif+4:wght@400;500;600&display=swap');
 
 :root{font-family:'DM Sans',system-ui,sans-serif;color:#262620;background:#f9f7f1;font-synthesis:none}
 *{box-sizing:border-box}
@@ -57,6 +57,8 @@ a{color:inherit;text-decoration:none}
 .chapter-number{color:#aaa699;font-size:11px;padding-top:2px}
 .reading-area{max-width:850px;width:100%;padding:85px clamp(30px,8vw,115px) 36px;margin:0 auto}
 .reading-area article>h2{font-family:'Noto Serif SC',serif;font-size:clamp(32px,4vw,48px);font-weight:600;margin:21px 0 60px;line-height:1.45}
+.reading-area article>h2.translated-title{margin-bottom:14px}
+.translation-credit{font-size:12px;color:#9b998e;margin:0 0 52px}
 .chapter-content{font-family:'Noto Serif SC',serif;font-size:18px;line-height:2.5;color:#36362e;letter-spacing:.03em;min-height:250px}
 .chapter-content p{margin:0 0 1.45em}
 .chapter-content blockquote{border-left:3px solid #ba8063;padding:6px 0 6px 24px;margin:34px 0;color:#7b5f50}
@@ -65,7 +67,11 @@ a{color:inherit;text-decoration:none}
 .chapter-navigation a:hover{text-decoration:underline}
 .chapter-end{color:#a4a196}
 .reading-area footer{border-top:1px solid #e2ded4;padding-top:24px;font-size:12px;color:#aaa79b}
-[lang=en] .book-cover strong{font-family:'DM Sans',sans-serif;font-size:30px;letter-spacing:.02em;line-height:1.2;writing-mode:horizontal-tb;text-align:center}
-[lang=en] .hero h1,[lang=en] .section-heading h2,[lang=en] .sidebar h1,[lang=en] .reading-area article>h2,[lang=en] .chapter-content{font-family:Georgia,serif}
+[lang=en] .brand{font-family:'Fraunces',Georgia,serif;font-weight:600;letter-spacing:.025em}
+[lang=en] .hero h1{font-family:'Fraunces',Georgia,serif;font-size:clamp(52px,6vw,80px);line-height:1.18;letter-spacing:-.035em;font-weight:600}
+[lang=en] .section-heading h2,[lang=en] .book-card-text h3,[lang=en] .sidebar h1,[lang=en] .reading-area article>h2{font-family:'Fraunces',Georgia,serif;letter-spacing:-.025em;font-weight:600}
+[lang=en] .book-cover strong{font-family:'Fraunces',Georgia,serif;font-size:30px;font-weight:600;letter-spacing:-.015em;line-height:1.14;writing-mode:horizontal-tb;text-align:center}
+[lang=en] .chapter-content{font-family:'Source Serif 4',Georgia,serif;font-size:19px;line-height:1.9;letter-spacing:0}
+[lang=en] .chapter-navigation{font-family:'Source Serif 4',Georgia,serif}
 @media(max-width:760px){.site-header{height:62px;padding:0 20px}.brand{font-size:20px}.brand span{font-size:8px;margin-left:6px}.home-main{padding:0 24px}.hero{padding:75px 0 80px}.hero h1{font-size:48px}.library{padding:45px 0 80px}.reader-shell{display:block}.sidebar{border-right:0;border-bottom:1px solid #e3dfd4}.sidebar-inner{position:static;padding:32px 24px;max-height:none}.sidebar h1{font-size:25px;margin:10px 0}.book-description{margin-bottom:0}.sidebar-rule{margin:20px 0}.chapter-list{display:flex;overflow-x:auto;gap:8px}.chapter-list li{flex:none}.chapter-list li a{margin:0;padding:10px 12px}.reading-area{padding:55px 26px 28px}.reading-area article>h2{margin-bottom:40px}.chapter-content{font-size:16px;line-height:2.2}.chapter-navigation{margin-top:55px}}
 @media(max-width:520px){.brand span{display:none}.header-actions{gap:12px}.header-actions a{font-size:12px}}

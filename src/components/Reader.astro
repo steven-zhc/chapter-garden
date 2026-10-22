@@ -57,8 +57,9 @@ const alternateUrl = otherBook && otherChapter ? chapterUrl(otherBook, otherChap
       </aside>
       <main class="reading-area">
         <article>
-          <p class="eyebrow">{book.title} / {t.chapterHeading(chapter.data.order)}{chapter.data.author ? ` / ${chapter.data.author}` : ''}{chapter.data.translator ? ` / ${chapter.data.translator}` : ''}</p>
-          <h2>{chapter.data.title}</h2>
+          <p class="eyebrow">{book.title} / {t.chapterHeading(chapter.data.order)}{chapter.data.author ? ` / ${chapter.data.author}` : ''}</p>
+          <h2 class={chapter.data.translator ? 'translated-title' : undefined}>{chapter.data.title}</h2>
+          {chapter.data.translator && <p class="translation-credit">{t.translator}: {chapter.data.translator}</p>}
           <div class="chapter-content"><slot /></div>
         </article>
         <nav class="chapter-navigation" aria-label={book.locale === 'zh' ? '前后章节' : 'Previous and next chapters'}>

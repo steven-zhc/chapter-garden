@@ -25,6 +25,7 @@ export const copy = {
     readerFooter: '每一章，都是另一位作者的开始。',
     inOtherLanguage: 'Read in English',
     otherHome: 'English site',
+    translator: '译者',
   },
   en: {
     site: 'Chapter Garden',
@@ -50,5 +51,6 @@ export const copy = {
     readerFooter: 'Every chapter is a beginning for another writer.',
     inOtherLanguage: '阅读中文版',
     otherHome: '中文首页',
+    translator: 'Translated by',
   },
 } satisfies Record<Locale, object>

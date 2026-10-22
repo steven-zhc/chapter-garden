@@ -6,22 +6,22 @@
 
 ## 书架
 
-目前有八个原创故事开篇，欢迎从任意一本续写：
+目前有八个原创故事开篇，九章正文都提供中文原文和英文译文。英文译文为 AI 辅助初稿，欢迎润色或从任意一本续写：
 
-| 类型 | 故事 | 开篇悬念 |
-|---|---|---|
-| 玄幻 | 天命欠我一页 | 谁一直替少年延后死期？ |
-| 魔法 | 第十三座塔不教魔法 | 谁替没有魔力的学徒付出了记忆？ |
-| 恐怖 | 零号房今晚有人退房 | 不存在的房间为何预先开出她的退房单？ |
-| 穿越 | 我在千年前值天气班 | 谁在三十年前留下现代气象台的署名？ |
-| 科幻 | 太阳的第九分钟 | 来自未来的求救为何要阻止镜阵？ |
-| 侦探 | 失踪者亲自报案 | 谁用失踪者的样貌走进了监控盲区？ |
-| 爽文 | 我不再替他们兜底 | 被辞退的工程师如何接手真正的城市系统？ |
-| 悬疑 | 雨停以后 | 第二个自己为何也握着一封信？ |
+| 类型 | 中文书名 | 英文书名 | 开篇悬念 |
+|---|---|---|---|
+| 玄幻 | 天命欠我一页 | Fate Owes Me a Page | 谁一直替少年延后死期？ |
+| 魔法 | 第十三座塔不教魔法 | The Thirteenth Tower Teaches No Magic | 谁替没有魔力的学徒付出了记忆？ |
+| 恐怖 | 零号房今晚有人退房 | Room Zero Checks Out Tonight | 不存在的房间为何预先开出她的退房单？ |
+| 穿越 | 我在千年前值天气班 | Weather Duty a Thousand Years Ago | 谁在三十年前留下现代气象台的署名？ |
+| 科幻 | 太阳的第九分钟 | The Sun's Ninth Minute | 来自未来的求救为何要阻止镜阵？ |
+| 侦探 | 失踪者亲自报案 | The Missing Person Filed Her Own Report | 谁用失踪者的样貌走进了监控盲区？ |
+| 爽文 | 我不再替他们兜底 | I Won't Cover for Them Anymore | 被辞退的工程师如何接手真正的城市系统？ |
+| 悬疑 | 雨停以后 | After the Rain | 第二个自己为何也握着一封信？ |
 
 ## 阅读与创作
 
-- 阅读无需账号。网站公开展示已经合入 `main` 的书和章节；页面右上角可以切换网站语言。
+- 阅读无需账号。网站公开展示当前部署版本的书和章节；页面右上角可以切换网站语言。
 - 想续写时，fork 仓库，在自己的 fork 上建立分支。完成一章后，向本仓库的 `main` 提交 Pull Request。
 - `main` 受保护，只接收通过检查的 Pull Request。构建检查确保网站能正常生成；故事衔接、文字质量和内容是否适合发布仍需要审阅。
 - 每位作者保留自己提交内容的署名。作品的长期授权方式会在开放外部投稿前明确。
@@ -38,7 +38,7 @@ src/content/books/<book-id>/
     └── 01-opening.md
 ```
 
-`<book-id>` 是不随语言变化的作品 ID。一本书可以先只有 `zh/` 或 `en/`；有内容的语言版本才出现在对应书架。每个语言目录至少要有一个章节。译文沿用原文章节的**文件名和 `order`**，但在自己的 Markdown 文件中填写翻译后的 `title` 和正文。译文可以逐章加入；只有两种语言都有的章节才显示直达对应译文的链接。不要为尚未翻译的章节放占位正文，也不要把机器翻译直接当成已完成内容。
+`<book-id>` 是不随语言变化的作品 ID。一本书可以先只有 `zh/` 或 `en/`；有内容的语言版本才出现在对应书架。每个语言目录至少要有一个章节。译文沿用原文章节的**文件名和 `order`**，但在自己的 Markdown 文件中填写翻译后的 `title` 和正文。译文可以逐章加入；只有两种语言都有的章节才显示直达对应译文的链接。自动翻译需要核对剧情与语言并标明辅助方式；尚未翻译的章节不放占位正文。
 
 ### 添加一本书
 
@@ -90,9 +90,20 @@ The site is static. The Chinese home page is `/`; the English home page is `/en/
 
 ### Books and contributions
 
-The shelf currently has eight original Chinese openings: fantasy, magic, horror, time travel, science fiction, detective fiction, a power fantasy, and mystery. English stories and translations can be added as they are written.
+The shelf has eight original Chinese openings and English translations of all nine current chapters. The English translations are AI-assisted drafts and welcome editorial improvements.
 
-- Reading needs no account. Published books and chapters are those merged into `main`.
+| Genre | English title | Chinese original |
+|---|---|---|
+| Fantasy | Fate Owes Me a Page | 天命欠我一页 |
+| Magic | The Thirteenth Tower Teaches No Magic | 第十三座塔不教魔法 |
+| Horror | Room Zero Checks Out Tonight | 零号房今晚有人退房 |
+| Time Travel | Weather Duty a Thousand Years Ago | 我在千年前值天气班 |
+| Science Fiction | The Sun's Ninth Minute | 太阳的第九分钟 |
+| Detective | The Missing Person Filed Her Own Report | 失踪者亲自报案 |
+| Power Fantasy | I Won't Cover for Them Anymore | 我不再替他们兜底 |
+| Mystery | After the Rain | 雨停以后 |
+
+- Reading needs no account. The site displays books and chapters from its current deployment.
 - To contribute, fork the repository, create a branch in your fork, and open a pull request to `main` with a new chapter or book.
 - `main` is protected. A successful build is required; story continuity, writing quality, and suitability for publication also need review.
 - Writers retain attribution. Long-term licensing will be defined before outside submissions open.
