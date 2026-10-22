@@ -9,13 +9,13 @@ const books = await getBooks()
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="续章：一起写故事，一起读故事。" />
-    <title>续章 · 一起写下去</title>
+    <meta name="description" content="章节花园：一起写故事，一起读故事。" />
+    <title>章节花园 · 一起写下去</title>
     <link rel="stylesheet" href="/style.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/">续章 <span>CHAPTER GARDEN</span></a>
+      <a class="brand" href="/">章节花园 <span>CHAPTER GARDEN</span></a>
       <a class="header-link" href="https://github.com/steven-zhc/chapter-garden">参与创作 ↗</a>
     </header>
     <main class="home-main">
@@ -29,13 +29,13 @@ const books = await getBooks()
         <div class="book-grid">
           {books.map((book, index) => (
             <a class="book-card" href={`/books/${book.slug}/`}>
-              <div class="book-cover"><span class="book-cover-number">{String(index + 1).padStart(2, '0')} / {book.genre}</span><strong>{book.title}</strong><span>续章 · 共创小说</span></div>
+              <div class="book-cover"><span class="book-cover-number">{String(index + 1).padStart(2, '0')} / {book.genre}</span><strong>{book.title}</strong><span>章节花园 · 共创小说</span></div>
               <div class="book-card-text"><h3>{book.title}</h3><p>{book.description}</p><span>{book.genre} · {book.chapters.length} 章 · {book.author} <b>开始阅读 →</b></span></div>
             </a>
           ))}
         </div>
       </section>
     </main>
-    <footer class="home-footer">续章 · 故事由每一位作者继续。</footer>
+    <footer class="home-footer">章节花园 · 故事由每一位作者继续。</footer>
   </body>
 </html>
