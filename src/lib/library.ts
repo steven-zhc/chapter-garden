@@ -7,10 +7,11 @@ export type Book = {
   title: string
   description: string
   author: string
+  genre: string
   chapters: Chapter[]
 }
 
-type BookDetails = Pick<Book, 'title' | 'description' | 'author'>
+type BookDetails = Pick<Book, 'title' | 'description' | 'author' | 'genre'>
 
 const bookFiles = import.meta.glob<{ default: BookDetails }>(
   '../content/books/*/book.json',

@@ -26,7 +26,7 @@ const next = book.chapters[current + 1]
     <div class="reader-shell">
       <aside class="sidebar" aria-label="章节目录">
         <div class="sidebar-inner">
-          <p class="eyebrow">作者 · {book.author}</p>
+          <p class="eyebrow">{book.genre} · {book.author}</p>
           <h1><a href={`/books/${book.slug}/`}>{book.title}</a></h1>
           <p class="book-description">{book.description}</p>
           <div class="sidebar-rule"></div>

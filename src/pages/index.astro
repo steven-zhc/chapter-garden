@@ -29,8 +29,8 @@ const books = await getBooks()
         <div class="book-grid">
           {books.map((book, index) => (
             <a class="book-card" href={`/books/${book.slug}/`}>
-              <div class="book-cover"><span class="book-cover-number">{String(index + 1).padStart(2, '0')}</span><strong>{book.title}</strong><span>续章 · 共创小说</span></div>
-              <div class="book-card-text"><h3>{book.title}</h3><p>{book.description}</p><span>{book.chapters.length} 章 · {book.author} <b>开始阅读 →</b></span></div>
+              <div class="book-cover"><span class="book-cover-number">{String(index + 1).padStart(2, '0')} / {book.genre}</span><strong>{book.title}</strong><span>续章 · 共创小说</span></div>
+              <div class="book-card-text"><h3>{book.title}</h3><p>{book.description}</p><span>{book.genre} · {book.chapters.length} 章 · {book.author} <b>开始阅读 →</b></span></div>
             </a>
           ))}
         </div>
