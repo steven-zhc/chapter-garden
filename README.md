@@ -2,7 +2,7 @@
 
 故事像花园：一个人播下开头，后来的人写出新的枝叶。章节花园（Chapter Garden）是一个中英文共同写小说的开放书架。每本书可以由不同作者接力创作，读者可以从第一章一直读到最新一章，也可以接过故事继续写。
 
-网站采用静态页面。中文首页是 `/`，英文首页是 `/en/`，两边只展示对应语言已有的故事。打开一本书后，左侧是章节目录，右侧是正文。每本书放在 `src/content/books/<book-id>/` 下，中英文版本并排放在 `zh/` 和 `en/` 子目录。这样，故事内容可以像代码一样通过版本记录和 Pull Request 协作。
+网站采用静态页面。中文首页是 `/`，英文首页是 `/en/`，两边只展示对应语言已有的故事。打开一本书后，左侧是章节目录，右侧是正文。每本书放在 `src/content/books/<book-id>/` 下，同一章节的中英文文件并排存放，用 `_zh` 和 `_en` 后缀区分。这样，故事内容可以像代码一样通过版本记录和 Pull Request 协作。
 
 ## 书架
 
@@ -30,19 +30,17 @@
 
 ```text
 src/content/books/<book-id>/
-├── zh/
-│   ├── book.json
-│   └── 01-opening.md
-└── en/
-    ├── book.json
-    └── 01-opening.md
+├── book_zh.json
+├── book_en.json
+├── 01-opening_zh.md
+└── 01-opening_en.md
 ```
 
-`<book-id>` 是不随语言变化的作品 ID。一本书可以先只有 `zh/` 或 `en/`；有内容的语言版本才出现在对应书架。每个语言目录至少要有一个章节。译文沿用原文章节的**文件名和 `order`**，但在自己的 Markdown 文件中填写翻译后的 `title` 和正文。译文可以逐章加入；只有两种语言都有的章节才显示直达对应译文的链接。自动翻译需要核对剧情与语言并标明辅助方式；尚未翻译的章节不放占位正文。
+`<book-id>` 是不随语言变化的作品 ID。一本书可以先只有中文或英文文件；有内容的语言版本才出现在对应书架。每种已发布语言都需要 `book_<语言>.json` 和至少一个章节。译文沿用原文章节的**章节 ID（后缀前的文件名）和 `order`**，但在自己的 Markdown 文件中填写翻译后的 `title` 和正文。译文可以逐章加入；只有两种语言都有的章节才显示直达对应译文的链接。自动翻译需要核对剧情与语言并标明辅助方式；尚未翻译的章节不放占位正文。
 
 ### 添加一本书
 
-新建 `src/content/books/<book-id>/zh/book.json` 或 `src/content/books/<book-id>/en/book.json`：
+新建 `src/content/books/<book-id>/book_zh.json` 或 `src/content/books/<book-id>/book_en.json`：
 
 ```json
 {
@@ -53,7 +51,7 @@ src/content/books/<book-id>/
 }
 ```
 
-在同一语言目录里添加章节，例如 `01-opening.md`：
+在同一本书目录里添加章节，例如 `01-opening_zh.md`：
 
 ```md
 ---
@@ -65,7 +63,7 @@ author: 你的名字
 正文从这里开始。
 ```
 
-译文可在 frontmatter 中另加 `translator: 译者名字`；`author` 标注原作者。每个语言版本中的 `order` 不能重复。已有的《雨停以后》展示了中文目录结构。
+译文写在 `01-opening_en.md`，可在 frontmatter 中另加 `translator: 译者名字`；`author` 标注原作者。每个语言版本中的 `order` 不能重复。已有的《雨停以后》展示了配对文件。
 
 ## 本地运行
 
@@ -110,19 +108,17 @@ The shelf has eight original Chinese openings and English translations of all ni
 
 ### Content format and translations
 
-Use `src/content/books/<book-id>/zh/` for Chinese and `src/content/books/<book-id>/en/` for English. Both language folders live under the same stable book ID. A book may start in either language. Each language folder needs a localized `book.json` and at least one Markdown chapter.
+Keep both languages in `src/content/books/<book-id>/`. Use `_zh` for Chinese and `_en` for English. A book may start in either language. Each published language needs localized `book_<language>.json` metadata and at least one Markdown chapter.
 
 ```text
 src/content/books/<book-id>/
-├── zh/
-│   ├── book.json
-│   └── 01-opening.md
-└── en/
-    ├── book.json
-    └── 01-opening.md
+├── book_zh.json
+├── book_en.json
+├── 01-opening_zh.md
+└── 01-opening_en.md
 ```
 
-`book.json` contains `title`, `description`, `author`, and `genre` in that language. A chapter's frontmatter contains its localized `title`, positive integer `order`, optional original `author`, and optional `translator`. Use the **same filename and order** as the source chapter when translating. A translation may be added one chapter at a time. The reader links matching chapters only when both files exist; untranslated chapters need no placeholder.
+Each `book_<language>.json` contains `title`, `description`, `author`, and `genre` in that language. A chapter's frontmatter contains its localized `title`, positive integer `order`, optional original `author`, and optional `translator`. Use the **same chapter ID before the language suffix and the same order** as the source chapter when translating, for example `01-opening_zh.md` and `01-opening_en.md`. A translation may be added one chapter at a time. The reader links matching chapters only when both files exist; untranslated chapters need no placeholder.
 
 ```json
 {

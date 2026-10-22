@@ -25,7 +25,7 @@ const bookDetailsSchema = z.object({
 type BookDetails = z.infer<typeof bookDetailsSchema>
 
 const bookFiles = import.meta.glob<{ default: BookDetails }>(
-  '../content/books/*/*/book.json',
+  '../content/books/*/book_*.json',
   { eager: true },
 )
 
@@ -33,36 +33,47 @@ function isLocale(value: string): value is Locale {
   return locales.some((locale) => locale === value)
 }
 
+function chapterParts(chapter: Chapter): { slug: string; locale: Locale; chapterSlug: string } {
+  const slash = chapter.id.indexOf('/')
+  const slug = chapter.id.slice(0, slash)
+  const match = chapter.id.slice(slash + 1).match(/^(.+)_(zh|en)$/)
+  if (slash < 1 || !match || !isLocale(match[2])) {
+    throw new Error(`${chapter.id}: use <book-id>/<chapter-id>_zh.md or _en.md`)
+  }
+  return { slug, locale: match[2], chapterSlug: match[1] }
+}
+
 export async function getBooks(locale?: Locale): Promise<Book[]> {
   const chapters = await getCollection('chapters')
+  const chapterInfo = chapters.map((chapter) => ({ chapter, ...chapterParts(chapter) }))
   const books = Object.entries(bookFiles).map(([path, file]) => {
     const parts = path.split('/')
-    const slug = parts.at(-3)!
-    const language = parts.at(-2)!
-    if (!isLocale(language)) {
-      throw new Error(`${path}: language must be zh or en`)
+    const slug = parts.at(-2)!
+    const language = parts.at(-1)!.match(/^book_(zh|en)\.json$/)?.[1]
+    if (!language || !isLocale(language)) {
+      throw new Error(`${path}: use book_zh.json or book_en.json`)
     }
 
-    const ownChapters = chapters
-      .filter((chapter) => chapter.id.startsWith(`${slug}/${language}/`))
+    const ownChapters = chapterInfo
+      .filter((item) => item.slug === slug && item.locale === language)
+      .map((item) => item.chapter)
       .sort((a, b) => a.data.order - b.data.order)
 
     if (ownChapters.length === 0) {
-      throw new Error(`${slug}/${language}: add at least one chapter`)
+      throw new Error(`${slug}/book_${language}.json: add at least one chapter`)
     }
     const orders = ownChapters.map((chapter) => chapter.data.order)
     if (new Set(orders).size !== orders.length) {
-      throw new Error(`${slug}/${language}: chapter order values must be unique`)
+      throw new Error(`${slug}/book_${language}.json: chapter order values must be unique`)
     }
 
     return { slug, locale: language, ...bookDetailsSchema.parse(file.default), chapters: ownChapters }
   })
 
   const known = new Set(books.map((book) => `${book.slug}/${book.locale}`))
-  for (const chapter of chapters) {
-    const [slug, language] = chapter.id.split('/')
-    if (!known.has(`${slug}/${language}`)) {
-      throw new Error(`${chapter.id}: add a book.json in its language directory`)
+  for (const item of chapterInfo) {
+    if (!known.has(`${item.slug}/${item.locale}`)) {
+      throw new Error(`${item.chapter.id}: add book_${item.locale}.json beside the chapter`)
     }
   }
 
@@ -91,7 +102,7 @@ export async function getBooks(locale?: Locale): Promise<Book[]> {
 }
 
 export function chapterSlug(chapter: Chapter): string {
-  return chapter.id.split('/').slice(2).join('/')
+  return chapterParts(chapter).chapterSlug
 }
 
 export function homeUrl(locale: Locale): string {
