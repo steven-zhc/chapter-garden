@@ -1,0 +1,52 @@
+---
+import { copy } from '../lib/i18n'
+import { bookUrl, getBooks, homeUrl, type Locale } from '../lib/library'
+
+type Props = { locale: Locale }
+const { locale } = Astro.props
+const books = await getBooks(locale)
+const t = copy[locale]
+const otherLocale = locale === 'zh' ? 'en' : 'zh'
+---
+
+<!doctype html>
+<html lang={locale === 'zh' ? 'zh-CN' : 'en'}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={`${t.site}：${t.tagline}`} />
+    <title>{t.site} · {t.pageTitle}</title>
+    <link rel="alternate" hreflang={otherLocale === 'zh' ? 'zh-CN' : 'en'} href={new URL(homeUrl(otherLocale), Astro.site)} />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={homeUrl(locale)}>{t.site} <span>{locale === 'zh' ? 'CHAPTER GARDEN' : '章节花园'}</span></a>
+      <nav class="header-actions" aria-label={locale === 'zh' ? '网站导航' : 'Site navigation'}>
+        <a class="language-link" href={homeUrl(otherLocale)} lang={otherLocale === 'zh' ? 'zh-CN' : 'en'}>{otherLocale === 'zh' ? '中文' : 'English'}</a>
+        <a class="header-link" href="https://github.com/steven-zhc/chapter-garden">{t.contribute}</a>
+      </nav>
+    </header>
+    <main class="home-main">
+      <div class="hero">
+        <p class="eyebrow">A STORY IS NEVER FINISHED ALONE</p>
+        <h1>{t.heroBefore}<br /><em>{t.heroEmphasis}</em></h1>
+        <p>{t.heroDescription}</p>
+      </div>
+      <section class="library" aria-labelledby="library-title">
+        <div class="section-heading"><h2 id="library-title">{t.library}</h2><span>{t.bookCount(books.length)}</span></div>
+        {books.length === 0 ? <p class="empty-library">{t.emptyLibrary}</p> : (
+          <div class="book-grid">
+            {books.map((book, index) => (
+              <a class="book-card" href={bookUrl(book)}>
+                <div class="book-cover"><span class="book-cover-number">{String(index + 1).padStart(2, '0')} / {book.genre}</span><strong>{book.title}</strong><span>{t.coverCaption}</span></div>
+                <div class="book-card-text"><h3>{book.title}</h3><p>{book.description}</p><span>{book.genre} · {t.chapterCount(book.chapters.length)} · {book.author} <b>{t.read}</b></span></div>
+              </a>
+            ))}
+          </div>
+        )}
+      </section>
+    </main>
+    <footer class="home-footer">{t.homeFooter}</footer>
+  </body>
+</html>

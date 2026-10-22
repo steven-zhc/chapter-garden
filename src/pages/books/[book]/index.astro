@@ -4,7 +4,7 @@ import Reader from '../../../components/Reader.astro'
 import { getBooks } from '../../../lib/library'
 
 export async function getStaticPaths() {
-  const books = await getBooks()
+  const books = await getBooks('zh')
   return books.map((book) => ({ params: { book: book.slug }, props: { book } }))
 }
 

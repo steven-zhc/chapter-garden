@@ -8,6 +8,7 @@ const chapters = defineCollection({
     title: z.string(),
     order: z.number().int().positive(),
     author: z.string().optional(),
+    translator: z.string().optional(),
   }),
 })
 
