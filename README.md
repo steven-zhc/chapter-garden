@@ -62,7 +62,7 @@ The story begins here.
 
 ### Run locally
 
-Use Node.js 22.23.4 or newer. CI and Cloudflare Pages use Node.js 24.18.0 from `.node-version`.
+Use Node.js 26.13.0 or newer, the current LTS (`engines` in `package.json`). CI and Cloudflare Pages use Node.js 26.13.0 from `.node-version`.
 
 ```bash
 npm ci
@@ -144,7 +144,7 @@ author: 你的名字
 
 ## 本地运行
 
-需要 Node.js 22.23.4 或更新版本；CI 和 Cloudflare Pages 按 `.node-version` 使用 Node.js 24.18.0。
+需要 Node.js 26.13.0 或更新版本，即当前的 LTS（见 `package.json` 的 `engines`）；CI 和 Cloudflare Pages 按 `.node-version` 使用 Node.js 26.13.0。
 
 ```bash
 npm ci
