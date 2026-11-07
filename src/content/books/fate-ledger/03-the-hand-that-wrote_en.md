@@ -25,7 +25,7 @@ Wujiu did not need to be told. He knew the hook he left at the end of every stro
 
 “And the signatures?”
 
-“An order needs someone to pay for it. Every year at first frost, someone came up and signed for you. Last year it was Chen Aman. The ledger took her hand first, and the rest of her when the year ran out.”
+“An order needs someone to pay for it. Every year at first frost, someone came up and signed for you. Last year it was Chen Aman. The ledger took her hand that same night. It took the rest of her last month, before her year was even out.”
 
 Wujiu thought of the cloth around her left hand, and of the ointment she had carried up the stairs with the right.
 
