@@ -30,7 +30,7 @@ It took her a moment to understand. They were air pressure readings, taken by ha
 
 The last line was not a number. In the same handwriting, with the last stroke of *water* flicked upward, it read:
 
-**I waited here until the morning. No one came.**
+**I watched the water from here until the morning. No one came.**
 
 Gu Zhiwei pressed her palm against the pillar. Behind her, the courtyard was full of people breathing in their sleep.
 
