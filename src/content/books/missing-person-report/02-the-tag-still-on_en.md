@@ -20,7 +20,7 @@ He turned the sleeve over. The tag was there, exactly where the cuff would fold.
 
 Shen Yanqiu looked at it for a long while. “Noon,” she said at last. “Twelve fifty-three in the afternoon.”
 
-“And twelve hours later, a woman wearing this coat stood behind your husband outside a police station two thousand kilometers away.” He laid the receipt next to the report. On the form, the dot beside the corrected seven was small and very round. On the receipt, a pen had added the same dot beside the printed seven, as if checking it off.
+“And twelve hours before you paid for it, a woman wearing this coat stood behind your husband outside a police station two thousand kilometers away.” He laid the receipt next to the report. On the form, the dot beside the corrected seven was small and very round. On the receipt, a pen had added the same dot beside the printed seven, as if checking it off.
 
 “I didn't write that,” she said.
 
