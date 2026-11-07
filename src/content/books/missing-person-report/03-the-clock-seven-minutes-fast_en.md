@@ -28,7 +28,7 @@ He left her in the interview room with the duty officer and the open suitcase, a
 
 “Read it to me.”
 
-“*Reporting person: Shen Yanqiu.*” He breathed out. “*Missing person*—she's still writing. She writes the way I do. She just wrote a one, changed it to a seven, and put a dot beside it.”
+“*Reporting person: Shen Yanqiu.*” He breathed out. “*Missing person*—she's still writing. She writes the way I do. She just wrote a seven and put a dot beside it.”
 
 “What time did she write?”
 
