@@ -28,7 +28,7 @@ After he hung up, Su Mi was quiet for a while. Then she asked, “When does the 
 
 “Then we'll answer her in the ninth minute.”
 
-They switched the radio array to transmit mode. When the flare reached the ground, the curve on the screen jumped. Lin Shu watched the atomic clock: one minute, eight minutes. In the very second the ninth minute began, he pressed send, and Su Mi spoke into the microphone. “Why are you on that probe?”
+They switched the radio array to transmit mode. When the flare reached the ground, the curve on the screen jumped. Eight minutes had passed since it left the sun. Lin Shu watched the atomic clock and counted off one more minute. In the very second the ninth minute ended, exactly one minute after the flare's arrival, when the echo had always come, he pressed send, and Su Mi spoke into the microphone. “Why are you on that probe?”
 
 The echo came back faster than ever, almost on the heels of the ninth minute.
 
